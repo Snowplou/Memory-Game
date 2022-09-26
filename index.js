@@ -6,8 +6,12 @@ function startGame(){
     document.getElementById("page1").style.display = "none"
     document.getElementById("page2").style.display = "block"
 
-    for(let i = 0; i < 10; i++){
     chosenColors.push(possibleColors[Math.floor(Math.random() * possibleColors.length)])
-    }
-    console.log(chosenColors)
+
+    setTimeout(() => {
+        for(let item in chosenColors){
+            document.getElementById(chosenColors[item]).style.backgroundColor = "pink"
+        }
+    }, 3000)
+
 }
