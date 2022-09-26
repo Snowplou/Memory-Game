@@ -1,0 +1,69 @@
+body {
+    background-color: gray;
+}
+
+#page1 {
+    margin-top: 37vh;
+}
+
+#startButton {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25vh;
+    height: 10vh;
+    font-size: xx-large;
+    cursor: pointer;
+    border-radius: 10vh;
+    background-color: snow;
+}
+
+#page2 {
+    display: none;
+}
+
+.quarter {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    transition: background-color 0.2s ease-in-out;
+    z-index: 1;
+    cursor: pointer;
+  }
+  .quarter:hover {
+    background-color: pink;
+  }
+  .quarter1 {
+    top: 0;
+    left: 0;
+    background-color: red;
+    border-radius: 100% 0 0 0;
+  }
+  .quarter2 {
+    top: 0;
+    right: 0;
+    background-color: blue;
+    border-radius: 0 100% 0 0;
+  }
+  .quarter3 {
+    bottom: 0;
+    left: 0;
+    background-color: orange;
+    border-radius: 0 0 0 100%;
+  }
+  .quarter4 {
+    bottom: 0;
+    right: 0;
+    background-color: green;
+    border-radius: 0 0 100% 0;
+  }
+  .cutout {
+    width: 50%;
+    height: 50%;
+    background-color: white;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    border-radius: 50%;
+    z-index: 2;
+  }
