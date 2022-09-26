@@ -1,4 +1,4 @@
-let possibleColors = ["red", "blue", "yellow", "green"]
+let possibleColors = ["red", "blue", "orange", "green"]
 let chosenColors = []
 let userColors = []
 
@@ -8,10 +8,16 @@ function startGame(){
 
     chosenColors.push(possibleColors[Math.floor(Math.random() * possibleColors.length)])
 
+    let time = 1000
+
     setTimeout(() => {
         for(let item in chosenColors){
             document.getElementById(chosenColors[item]).style.backgroundColor = "pink"
+            setTimeout(() => {
+                document.getElementById(chosenColors[item]).style.backgroundColor = chosenColors[items]
+                // transition: background-color 0.2s ease-in-out;
+            }, time * (item + 1))
         }
-    }, 3000)
+    }, 500)
 
 }
