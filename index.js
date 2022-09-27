@@ -8,16 +8,28 @@ function startGame(){
 
     chosenColors.push(possibleColors[Math.floor(Math.random() * possibleColors.length)])
 
+    chosenColors.push(possibleColors[Math.floor(Math.random() * possibleColors.length)])
+    chosenColors.push(possibleColors[Math.floor(Math.random() * possibleColors.length)])
+
+
     let time = 1000
 
     setTimeout(() => {
+
         for(let item in chosenColors){
-            document.getElementById(chosenColors[item]).style.backgroundColor = "pink"
             setTimeout(() => {
-                document.getElementById(chosenColors[item]).style.backgroundColor = chosenColors[items]
-                // transition: background-color 0.2s ease-in-out;
-            }, time * (item + 1))
+
+                console.log(chosenColors[item])
+
+                document.getElementById(chosenColors[item]).style.backgroundColor = "pink"
+
+                setTimeout(() => {
+                    document.getElementById(chosenColors[item]).style.backgroundColor = chosenColors[item]
+                }, time)
+
+            }, time * item)
         }
-    }, 500)
+
+    }, 1000)
 
 }
