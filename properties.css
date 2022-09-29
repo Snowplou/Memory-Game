@@ -22,6 +22,20 @@ body {
     display: none;
 }
 
+.stats {
+  font-size: 3.5vw;
+}
+
+#highScore {
+  text-align: center;
+  float: left;
+}
+
+#score {
+  text-align: center;
+  float: right;
+}
+
 .quarter {
     position: absolute;
     width: 50%;
@@ -30,8 +44,8 @@ body {
     z-index: 1;
     cursor: pointer;
   }
-  .quarter:hover {
-    background-color: pink;
+  .hoverAbility:hover {
+    background-color: pink !important;
   }
   .quarter1 {
     top: 0;

@@ -1,14 +1,18 @@
 <body>
-    <div id = "page1">
-        <button id = "startButton" onclick="startGame()">Start</button>
+    <div id="page1">
+        <button id="startButton" onclick="startGame()">Start</button>
     </div>
-    <div id = "page2">
-        <div class="quarter quarter1" id = "red"></div>
-        <div class="quarter quarter2" id = "blue"></div>
-        <div class="quarter quarter3" id = "orange"></div>
-        <div class="quarter quarter4" id = "green"></div>
-        <div class="cutout" id = "center"></div>
+    <div id="page2">
+        <p id = "highScore" class = "stats"><i><u>High Score</i></u><br>0</p>
+        <p id = "score" class = "stats"><i><u>Score</i></u><br>0</p>
+        <div id="game">
+            <div class="quarter quarter1" id="red" onclick="red()"></div>
+            <div class="quarter quarter2" id="blue" onclick="blue()"></div>
+            <div class="quarter quarter3" id="orange" onclick="orange()"></div>
+            <div class="quarter quarter4" id="green" onclick="green()"></div>
+            <div class="cutout" id="center"></div>
+        </div>
     </div>
 </body>
 <link href="properties.css" rel="stylesheet">
-<script src = "index.js"></script>
+<script src="index.js"></script>
