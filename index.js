@@ -32,7 +32,6 @@ function displayColors(){
     showingColors = true
 
     let time = 1500
-    // let time = 500
 
     setTimeout(() => {
 
