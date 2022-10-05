@@ -11,63 +11,28 @@ if(highScore == null){
 
 document.getElementById("highScore").innerHTML = "<i><u>High Score</i></u><br>" + highScore
 
+function updateScores(){
+    if(score > highScore){
+        localStorage.setItem("highScore", score)
+        highScore = score;
+    }
+
+    document.getElementById("score").innerHTML = "<i><u>Score</i></u><br>" + score
+    document.getElementById("highScore").innerHTML = "<i><u>High Score</i></u><br>" + highScore
+    document.getElementById("finalScore").innerHTML = "Score: " + score
+    document.getElementById("finalHighScore").innerHTML = "High Score: " + highScore
+}
+
+function addColors(){
+    userColors = []
+    chosenColors.push(possibleColors[Math.floor(Math.random() * possibleColors.length)])
+}
+
 function displayColors(){
-
-}
-
-function turn(color) {
-    if (showingColors) return
-    userColors.push(color)
-    if(userColors[userColors.length - 1] != chosenColors[userColors.length - 1]){
-        document.getElementById("page2").style.display = "none"
-        document.getElementById("page3").style.display = "block"
-        if(score > highScore){
-            localStorage.setItem("highScore", score)
-            highScore = score;
-        }
-        document.getElementById("finalScore").innerHTML = "Score: " + score
-        document.getElementById("finalHighScore").innerHTML = "High Score: " + highScore
-    }
-    else if(userColors.length == chosenColors.length){
-        score++
-        document.getElementById("score").innerHTML = "<i><u>Score</i></u><br>" + score
-        console.log("new turn")
-    }
-    else{
-        score++
-        document.getElementById("score").innerHTML = "<i><u>Score</i></u><br>" + score
-    }
-}
-
-function red() {
-    turn("red")
-}
-
-function blue() {
-    turn("blue")
-}
-
-function orange() {
-    turn("orange")
-}
-
-function green() {
-    turn("green")
-}
-
-function startGame() {
-    document.getElementById("page1").style.display = "none"
-    document.getElementById("page2").style.display = "block"
-
     showingColors = true
 
-    chosenColors.push(possibleColors[Math.floor(Math.random() * possibleColors.length)])
-
-    chosenColors.push(possibleColors[Math.floor(Math.random() * possibleColors.length)])
-    chosenColors.push(possibleColors[Math.floor(Math.random() * possibleColors.length)])
-
-    // let time = 1500
-    let time = 500
+    let time = 1500
+    // let time = 500
 
     setTimeout(() => {
 
@@ -97,5 +62,50 @@ function startGame() {
         }
         showingColors = false
     }, (chosenColors.length * time) + (time * 0.5))
+}
+
+function turn(color) {
+    if (showingColors) return
+    userColors.push(color)
+    if(userColors[userColors.length - 1] != chosenColors[userColors.length - 1]){
+        document.getElementById("page2").style.display = "none"
+        document.getElementById("page3").style.display = "block"
+        updateScores()
+    }
+    else if(userColors.length == chosenColors.length){
+        score++
+        updateScores()
+        addColors()
+        displayColors()
+    }
+    else{
+        score++
+        updateScores()
+    }
+}
+
+function red() {
+    turn("red")
+}
+
+function blue() {
+    turn("blue")
+}
+
+function orange() {
+    turn("orange")
+}
+
+function green() {
+    turn("green")
+}
+
+function startGame() {
+    document.getElementById("page1").style.display = "none"
+    document.getElementById("page2").style.display = "block"
+
+    chosenColors.push(possibleColors[Math.floor(Math.random() * possibleColors.length)])
+
+    displayColors()
 
 }
