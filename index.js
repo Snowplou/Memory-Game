@@ -43,8 +43,6 @@ function displayColors(){
         for (let item in chosenColors) {
             setTimeout(() => {
 
-                console.log(chosenColors[item])
-
                 document.getElementById(chosenColors[item]).style.backgroundColor = "pink"
 
                 setTimeout(() => {
