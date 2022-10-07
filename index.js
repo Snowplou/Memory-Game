@@ -10,6 +10,7 @@ if(highScore == null){
 }
 
 document.getElementById("highScore").innerHTML = "<i><u>High Score</i></u><br>" + highScore
+document.getElementById("startHighScore").innerHTML = "<i><u>High Score</i></u><br>" + highScore
 
 function playAgain(){
         location.reload()
